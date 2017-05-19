@@ -63,7 +63,7 @@ wrap_plot_call <- function(plot_fun,the.name=''){
     end_plot()
 
     #return data or plot, depending on the settings
-    return.mode <-uv_setting()$plot.return.mode
+    return.mode <-sv_setting()$plot.return.mode
     if (return.mode=='plot'){
       return(the.plot)
     }else{#data?
@@ -202,7 +202,7 @@ begin_plot <-function(the.name, g_hand=NULL){
   #no_plot<-attr(corr.mat,'no_corrplot')
   #if (!is.null(no_plot) && no_plot==TRUE) return(corr.mat)
 
-  the.setting <- uv_setting()
+  the.setting <- sv_setting()
 
   #Create a filename
   ##add filename prepend
@@ -302,7 +302,7 @@ begin_plot <-function(the.name, g_hand=NULL){
 #' @examples
 end_plot <-function(){
 
-  the.setting <- uv_setting()
+  the.setting <- sv_setting()
   the.name <- caller_name.str()
 
   if (the.setting$plot.plot.mode=='single'){

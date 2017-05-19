@@ -1,4 +1,12 @@
 
+#' Impute it!
+#'
+#' @param data.df
+#'
+#' @return
+#' @export
+#'
+#' @examples
 impute_it <- function(data.df){
 
   #Miss Forest

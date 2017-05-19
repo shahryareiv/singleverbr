@@ -3,7 +3,7 @@
 #' @param data.df
 #' input data
 #' @param response.name
-#' the name of the column which is the response
+#' the name of the response column
 #' @param the.train.ratio
 #' the percent of train data to the whole data (the rest for test)
 #' @param pred.vars.handling

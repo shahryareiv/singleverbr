@@ -7,11 +7,11 @@
 #' @export
 #'
 #' @examples
-uv_meta_spss_variables.df <- function(the.data){
+sv_meta_spss_variables.df <- function(the.data){
 
   the.result <- the.data %>%
     lapply(function(x){attributes(x)}) %>% #make a list out of the labels
-    uv_list_to_df() %>% #convert the list to df
+    sv_list_to_df() %>% #convert the list to df
     dplyr::rowwise() %>% #look at the rows
     dplyr::do( #for each row
       {

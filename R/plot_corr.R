@@ -18,7 +18,7 @@
 
 
 
-## uv_plot_corr_mat.in_mat-----
+## sv_plot_corr_mat.in_mat-----
 
 
 #' #' Plots 1-figure of correlation
@@ -37,7 +37,7 @@
 #' #' @param bg
 #' #' @param filename
 #' #' @param ...
-#' uv_singleplot_corr_mat.in_mat <- function(
+#' sv_singleplot_corr_mat.in_mat <- function(
 #'   corr.mat,
 #'   corr.sig.mat,
 #'   filename='',
@@ -49,7 +49,7 @@
 #'   the.arg.list <- this_args.for_plot(remove.list = c("filename"))
 #'
 #'   #wrap the func
-#'   the_plot_func <- wrap_plot_call(uv_plot_corr_mat.in_mat, the.name = filename)
+#'   the_plot_func <- wrap_plot_call(sv_plot_corr_mat.in_mat, the.name = filename)
 #'
 #'   #call the wrapped with args
 #'   the_out <- do.call(the_plot_func, the.arg.list)
@@ -75,7 +75,7 @@
 #' }
 
 #the core plot
-uv_plot_corr_mat.in_mat <- function(
+sv_plot_corr_mat.in_mat <- function(
   corr.mat,
   corr.sig.mat,
   plot.method = c('shade','circle'),
@@ -93,7 +93,7 @@ uv_plot_corr_mat.in_mat <- function(
   number.cex = 1.0,
   shade.lwd = 0.01,
   shade.col = "black",
-  the.mar = c(0,0,0,0),#uv_setting()$plot.single.mar
+  the.mar = c(0,0,0,0),#sv_setting()$plot.single.mar
   bty = 'u ',
   insig = "blank",
   ...
@@ -147,7 +147,7 @@ uv_plot_corr_mat.in_mat <- function(
 ## plot_corr_mat -----
 
 
-uv_plot_corr_mat <- function(
+sv_plot_corr_mat <- function(
   the.data,
   calc.method = c("kendall","spearman","pearson"),
   conf.level=0.95,
@@ -174,12 +174,12 @@ uv_plot_corr_mat <- function(
       #calculate the correlation matrix and correlation significance matrix
       the.corr.mat <- cor(data.df, method= calc.method, use=miss.method)
       log_debug_var("the.corr.mat",the.corr.mat)
-      the.corr.sig.mat <- uv_corr_sig.mat(data.df,conf.level = conf.level,method=calc.method)[[1]]#it gives a list as output
+      the.corr.sig.mat <- sv_corr_sig.mat(data.df,conf.level = conf.level,method=calc.method)[[1]]#it gives a list as output
       log_debug_var("the.corr.sig.mat",the.corr.sig.mat)
 
 
       #call the method
-      uv_plot_corr_mat.in_mat(
+      sv_plot_corr_mat.in_mat(
         corr.mat = the.corr.mat,
         corr.sig.mat = the.corr.sig.mat,
         ...
@@ -197,7 +197,7 @@ uv_plot_corr_mat <- function(
 
 
 #NOTE: data and mapping should not change name, becuase it is wrapped
-uv_plot_corr_scatter.noplot <- function(data, mapping, low = "#132B43", high = "#56B1F7", ...) {
+sv_plot_corr_scatter.noplot <- function(data, mapping, low = "#132B43", high = "#56B1F7", ...) {
 
   cat_data <- data.frame(lapply(data, function(x) factor(x, ordered = TRUE)))
 
@@ -231,10 +231,10 @@ uv_plot_corr_scatter.noplot <- function(data, mapping, low = "#132B43", high = "
 
 
 #NOTE: data and mapping should not change name, becuase it is wrapped
-uv_plot_corr_coef.noplot <- function(data, mapping, the.method = "kendall", the.use="complete.obs" , low = "#132B43", high = "#56B1F7", ...) {
+sv_plot_corr_coef.noplot <- function(data, mapping, the.method = "kendall", the.use="complete.obs" , low = "#132B43", high = "#56B1F7", ...) {
 
 
-  if (uv_corr_test.pair(x, y, conf.level = 0.95, method=the.method) < 0.5){
+  if (sv_corr_test.pair(x, y, conf.level = 0.95, method=the.method) < 0.5){
 
     cor <- round( cor(data, method = mapping, use = the.use )[deparse(mapping$x),deparse(mapping$y)],digits = 2 )
 
@@ -275,20 +275,20 @@ uv_plot_corr_coef.noplot <- function(data, mapping, the.method = "kendall", the.
 
 
 #Pairs
-uv_plot_corr_pair <- function(the.data, ...) {
+sv_plot_corr_pair <- function(the.data, ...) {
 
   the.plot<-GGally::ggpairs(
     the.data,
     #upper = list(
-    #  continuous=wrap(uv_plot_corr_coef.noplot,size=3),
-    #  mapping= aes(color = uv_plot_corr_coef.noplot)
+    #  continuous=wrap(sv_plot_corr_coef.noplot,size=3),
+    #  mapping= aes(color = sv_plot_corr_coef.noplot)
     #),
     upper=list(continuous="blank"),
     lower = list(
-      continuous=GGally::wrap(uv_plot_corr_scatter.noplot, size=0.3, alpha=0.8)#"points",ratio
+      continuous=GGally::wrap(sv_plot_corr_scatter.noplot, size=0.3, alpha=0.8)#"points",ratio
     ),
     diag = list(
-      continuous=GGally::wrap(uv_plot_histo.noplot)
+      continuous=GGally::wrap(sv_plot_histo.noplot)
     ),
     axisLabels = "none",
     switch = 'both'#move strip left and down

@@ -7,9 +7,9 @@
 #' @export
 #'
 #' @examples
-uv_meta_guess_messy <- function(the.data){
+sv_meta_guess_messy <- function(the.data){
 
-  the.meta <- uv_meta_spss_variables.df(the.data)
+  the.meta <- sv_meta_spss_variables.df(the.data)
 
   the.data
 }
@@ -24,10 +24,10 @@ uv_meta_guess_messy <- function(the.data){
 #' @export
 #'
 #' @examples
-uv_meta_compare <- function(the.data.1,the.data.2){
+sv_meta_compare <- function(the.data.1,the.data.2){
 
-  the.meta.1 <- uv_meta_spss_variables.df(the.data.1)
-  the.meta.2 <- uv_meta_spss_variables.df(the.data.2)
+  the.meta.1 <- sv_meta_spss_variables.df(the.data.1)
+  the.meta.2 <- sv_meta_spss_variables.df(the.data.2)
 
   the.compare <- dplyr::anti_join(the.meta.1,the.meta.2,by='the.variable')
 
@@ -46,9 +46,9 @@ uv_meta_compare <- function(the.data.1,the.data.2){
 #' @export
 #'
 #' @examples
-uv_meta_harmonize <- function(the.data,the.type=c('label','value.labels','value.values'), the.mains.and.alternatives.ls){
+sv_meta_harmonize <- function(the.data,the.type=c('label','value.labels','value.values'), the.mains.and.alternatives.ls){
 
-  the.meta <- uv_meta_spss_variables.df(the.data)
+  the.meta <- sv_meta_spss_variables.df(the.data)
 
   lapply(the.mains.and.alternatives.ls, function(the.pair){
 
@@ -95,7 +95,7 @@ uv_meta_harmonize <- function(the.data,the.type=c('label','value.labels','value.
 #' @export
 #'
 #' @examples
-uv_meta_change_value_label <- function(the.data, the.variable, the.value.label.src, the.value.label.des){
+sv_meta_change_value_label <- function(the.data, the.variable, the.value.label.src, the.value.label.des){
 
 
   # the.data[,attr(the.data$the.variable, which='label')='']

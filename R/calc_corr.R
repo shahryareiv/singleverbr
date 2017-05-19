@@ -5,7 +5,7 @@
 #' @export
 #'
 #' @examples
-uv_corr_sig.mat <- function(...){
+sv_corr_sig.mat <- function(...){
 
   the_func <-func_wrapper(calc_corr_sig.mat)
   return(the_func(...))
@@ -50,7 +50,7 @@ calc_corr_sig.mat <- function(corr.data, conf.level = 0.95,method="kendall"){#="
 
 
 
-uv_corr_test.pair <- function(...){
+sv_corr_test.pair <- function(...){
 
   the_func <-func_wrapper(corr_test.pair)
   return(the_func(...))

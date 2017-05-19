@@ -16,7 +16,7 @@
 #' @examples
 log_debug<-function(...){
 
-  is.debug.mode <- uv_setting()$debug.mode
+  is.debug.mode <- sv_setting()$debug.mode
 
   if (is.debug.mode){
 
@@ -40,7 +40,7 @@ log_debug<-function(...){
 #' @examples
 log_debug_var<-function(x,value){
 
-  is.debug.mode <- uv_setting()$debug.mode
+  is.debug.mode <- sv_setting()$debug.mode
 
   if (is.debug.mode){
 

@@ -20,7 +20,7 @@
 #' #' @export
 #' #'
 #' #' @examples
-#' uv_singleplot_corr_mat <- function(
+#' sv_singleplot_corr_mat <- function(
 #'   data.df,
 #'   the.name='',
 #'   ...
@@ -33,7 +33,7 @@
 #'   log_debug('arg list is:',the.arg.list)
 #'
 #'   #wrap the main function
-#'   the_plot_func <- wrap_plot_call(uv_plot_corr_mat,the.name)
+#'   the_plot_func <- wrap_plot_call(sv_plot_corr_mat,the.name)
 #'
 #'   #call the wrapped with args
 #'   the.out <- do.call(the_plot_func, the.arg.list)
@@ -46,7 +46,7 @@
 
 
 
-uv_plot_likert <- function(the.data, the.n.levels=5, ...){
+sv_plot_likert <- function(the.data, the.n.levels=5, ...){
 
   # require(likert)
   #log_debug_var('liker.dots',...)

@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-uv_list_to_df <- function(listfordf){
+sv_list_to_df <- function(listfordf){
 
   if(!is.list(listfordf)) stop("it should be a list")
 

@@ -43,7 +43,7 @@ caller_name.str <- function(n=2){
 is_in_whitelist <- function(the.name){#ISW:
 
   #so, what is the white list
-  the.white.list <- uv_setting()$func.white.list
+the.white.list <- sv_setting()$func.white.list
 
   #a null white list means all are white
   if(!is.null(the.white.list)){

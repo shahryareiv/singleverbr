@@ -1,7 +1,7 @@
 # S E T T I N G =====
 
 
-#' Closure factory for uv_set()
+#' Closure factory for sv_set()
 #'
 #' @return
 #' @export
@@ -48,5 +48,5 @@ setting.fun <- function(){
 #' @examples
 #'
 #' #just return the closure
-uv_setting <- setting.fun()
+sv_setting <- setting.fun()
 
