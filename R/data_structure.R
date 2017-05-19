@@ -22,3 +22,34 @@ uv_list_to_df <- function(listfordf){
 
   df
 }
+
+
+
+#' Title
+#'
+#' @param data.df
+#' @param the.levels
+#' @param be.ordered
+#'
+#' @return
+#' @export
+#'
+#' @examples
+as.factor.dataframe <- function(data.df, the.levels = 5, be.ordered = TRUE){
+  # as.data.frame(lapply(data.df, factor, levels = 1:the.levels))
+  as.data.frame( lapply( data.df, function(x){factor(x, ordered = be.ordered)}) )
+}
+
+
+#' Title
+#'
+#' @param data.df
+#'
+#' @return
+#' @export
+#'
+#' @examples
+as.integer.dataframe <- function(data.df){
+
+  as.data.frame( lapply( data.df, function(x){as.integer(x)}) )
+}
