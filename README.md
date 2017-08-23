@@ -2,23 +2,59 @@
 SingleVerbR allows to run some common r analysis and visualization tasks through a single call of its functions.
 Available functions:
 
-
- * calc_corr.R
- * calc_multicollinearity.R
- * clean_unification.R
- * colors.R
- * data_structure.R
- * hello.R
- * install.R
- * internals.R
- * learning_preparation.R
- * log.R
- * manip_impute.R
- * plot_base.R
- * plot_corr.R
- * plot_histo.R
- * plot_likert.R
- * report_clusters.R
- * report_room.R
- * singleverbr_setting.R
- * structure_spss.R
+* begin_page_plots
+* begin_plot
+* begin_plot_all
+* begin_single_plots
+* calc_corr_sig.mat
+* caller_name.str
+* color_pallete
+* corr_test.pair
+* end_page_plots
+* end_plot
+* end_plot_all
+* end_single_plots
+* func_wrapper
+* grab_grob
+* groupby_of
+* is_in_whitelist
+* log_debug
+* log_debug_var
+* log_output
+* log_where
+* plot_zero
+* setting.fun
+* single_of
+* sv_as_factor.dataframe
+* sv_as_integer.dataframe
+* sv_corr_sig.mat
+* sv_corr_test.pair
+* sv_factor_mix
+* sv_impute
+* sv_impute_na_report
+* sv_invert_likert
+* sv_lasso
+* sv_list_to_df
+* sv_meta_change_value_label
+* sv_meta_compare
+* sv_meta_guess_messy
+* sv_meta_harmonize
+* sv_meta_variables_detailed
+* sv_meta_variables.df
+* sv_plot_corr_coef.noplot
+* sv_plot_corr_mat
+* sv_plot_corr_mat.in_mat
+* sv_plot_corr_pair
+* sv_plot_corr_scatter.noplot
+* sv_plot_histo.noplot
+* sv_plot_likert
+* sv_plssem
+* sv_report_cluster
+* sv_reportage
+* sv_set_scenario
+* sv_setting
+* sv_test_and_train_sets
+* sv_vif
+* this_args.for_plot
+* uv_test_and_train_sets
+* wrap_plot_call
