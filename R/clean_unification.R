@@ -15,7 +15,7 @@ sv_meta_guess_messy <- function(the.data){
 }
 
 
-#' Title
+#' compares two data.frames returns the variables are different between them
 #'
 #' @param the.data.1
 #' @param the.data.2

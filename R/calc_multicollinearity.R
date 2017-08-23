@@ -1,4 +1,15 @@
-vif_func <- function(in_frame,thresh=10,trace=T,...){
+#' Title
+#'
+#' @param in_frame
+#' @param thresh
+#' @param trace
+#' @param ...
+#'
+#' @return
+#' @export
+#'
+#' @examples
+sv_vif <- function(in_frame,thresh=10,trace=T,...){
 
   require(fmsb)
 

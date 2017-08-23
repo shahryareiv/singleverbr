@@ -147,6 +147,19 @@ sv_plot_corr_mat.in_mat <- function(
 ## plot_corr_mat -----
 
 
+#' Plot correlation matrix
+#'
+#' @param the.data
+#' @param calc.method
+#' @param conf.level
+#' @param miss.method
+#' @param group_by
+#' @param ...
+#'
+#' @return
+#' @export
+#'
+#' @examples
 sv_plot_corr_mat <- function(
   the.data,
   calc.method = c("kendall","spearman","pearson"),
@@ -155,6 +168,7 @@ sv_plot_corr_mat <- function(
   group_by=NULL,
   ...
 ){
+
 
   #we do this crazy thing because late more complicated the.data can be
   data.df <- the.data

@@ -21,7 +21,7 @@ calc_corr_sig.mat <- function(corr.data, conf.level = 0.95,method="kendall"){#="
   for(i in 1:(n-1)){
       for(j in (i+1):n){
 
-          if (method=='pearson'){ # Pearson
+          if (method == 'pearson'){ # Pearson
 
             corr_val <- cor.test(mat[,i], mat[,j], conf.level = conf.level, method=method)#
             lowCI.mat[i,j] <- lowCI.mat[j,i] <- corr_val$conf.int[1]

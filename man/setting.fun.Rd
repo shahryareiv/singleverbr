@@ -2,10 +2,15 @@
 % Please edit documentation in R/singleverbr_setting.R
 \name{setting.fun}
 \alias{setting.fun}
-\title{Closure factory for uv_set()}
+\title{Closure factory for sv_set()}
 \usage{
 setting.fun()
 }
 \description{
-Closure factory for uv_set()
+Closure factory for sv_set()
+}
+\examples{
+my_setter <- setting.fun()
+my_setter(debug.mode = TRUE)
+
 }

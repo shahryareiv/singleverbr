@@ -23,7 +23,7 @@ log_debug<-function(...){
     #to avoid clusures that have no name
     the.name <-caller_name.str(2)
 
-    cat(paste('\n>>>>> ',the.name ,' ',...,'<<<<<\n'))
+    cat(paste('\nDEBUG\n>>>>> ',the.name ,' ',...,'<<<<<\n'))
 
   }
 }

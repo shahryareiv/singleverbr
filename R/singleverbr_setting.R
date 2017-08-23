@@ -7,15 +7,18 @@
 #' @export
 #'
 #' @examples
+#' my_setter <- setting.fun()
+#' my_setter(debug.mode = TRUE)
+#'
 setting.fun <- function(){
 
   # creat an initial setting in the parent environment
   initial.setting.ls <- list(
     func.white.list=NULL,#an empty list means all functions
-    debug.mode = TRUE,
+    debug.mode = FALSE,
     plot.return.mode = 'data',#plot
     plot.plot.mode = 'single',#c('single','page','multi-page')
-    plot.filename.prepend = 'uvon_',
+    plot.filename.prepend = '',
     plot.device = 'pdf',#c('viewport','pdf','tikz','png'),
     plot.device.external = NULL,
     plot.filename.timestamp = FALSE,

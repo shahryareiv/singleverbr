@@ -25,7 +25,7 @@ sv_list_to_df <- function(listfordf){
 
 
 
-#' Title
+#' Converts a data.frame to a factor data.frame each var with the.levels level
 #'
 #' @param data.df
 #' @param the.levels
@@ -35,13 +35,13 @@ sv_list_to_df <- function(listfordf){
 #' @export
 #'
 #' @examples
-as.factor.dataframe <- function(data.df, the.levels = 5, be.ordered = TRUE){
+sv_as_factor.dataframe <- function(data.df, the.levels , be.ordered = TRUE){
   # as.data.frame(lapply(data.df, factor, levels = 1:the.levels))
   as.data.frame( lapply( data.df, function(x){factor(x, ordered = be.ordered)}) )
 }
 
 
-#' Title
+#' Converts a data.frame to an integer data.frame
 #'
 #' @param data.df
 #'
@@ -49,7 +49,9 @@ as.factor.dataframe <- function(data.df, the.levels = 5, be.ordered = TRUE){
 #' @export
 #'
 #' @examples
-as.integer.dataframe <- function(data.df){
+sv_as_integer.dataframe <- function(data.df){
 
   as.data.frame( lapply( data.df, function(x){as.integer(x)}) )
 }
+
+

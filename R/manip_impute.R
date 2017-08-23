@@ -2,12 +2,15 @@
 #' Impute it!
 #'
 #' @param data.df
-#'
+#' The data.frame to be imputed
 #' @return
 #' @export
 #'
 #' @examples
-impute_it <- function(data.df){
+sv_impute <- function(data.df, the.method = c('remove')){
+
+
+  the.method <- match.arg(the.method)
 
   #Miss Forest
   # library(missForest)
@@ -29,4 +32,23 @@ impute_it <- function(data.df){
   return(data.df[complete.cases(data.df),])
 
 }
+
+
+#' Title
+#'
+#' @param data.df
+#'
+#' @return
+#' @export
+#'
+#' @examples
+sv_impute_na_report <- function(data.df){
+  res <- lapply(
+    data.df,
+    function (x){
+      nrow(x[is.na(x)])
+    }
+  )
+}
+
 
